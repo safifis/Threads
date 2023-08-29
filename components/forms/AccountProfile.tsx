@@ -17,10 +17,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
+import { Textarea } from "@/components/ui/textarea";
 
 import { UserValidation } from "@/lib/validations/user";
-
 
 interface Props {
   user: {
@@ -37,7 +36,7 @@ interface Props {
 const AccountProfile = ({ user, btnTitle }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
-
+//   const { startUpload } = useUploadThing("media");
 
   const [files, setFiles] = useState<File[]>([]);
 
@@ -171,7 +170,11 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 Bio
               </FormLabel>
               <FormControl>
-
+                <Textarea
+                  rows={10}
+                  className='account-form_input no-focus'
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
