@@ -29,7 +29,9 @@ async function Page({
     <section>
       <h1 className='head-text mb-10'>Search</h1>
 
-      <Searchbar routeType='search' />
+      <div className='mt-5'>
+        <Searchbar routeType='search' />
+      </div>
 
       <div className='mt-14 flex flex-col gap-9'>
         {result.users.length === 0 ? (
